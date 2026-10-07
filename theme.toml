@@ -44,7 +44,7 @@ master = "build/upstream/PolarCursorTheme/Source/Cursors.svg"
 
 # Only variants on the gnome-look page: orange (default), blue, green. They differ ONLY in the spinner
 # bar colour; Blue/Green rotate the bar's hue (+180 / +74 deg) measured from the upstream PNGs
-# (docs/LAYER_SPLITTING_DESIGN.md section 6). Both hex values occur exactly once in the master.
+# (w11-cursor-toolkit docs/LAYER_SPLITTING_DESIGN.md section 6). Both hex values occur exactly once in the master.
 [[variants]]
 id          = "orange"
 scheme_name = "Polar W11 HiDPI"
@@ -60,7 +60,7 @@ scheme_name = "Polar Green W11 HiDPI"
 recolor     = { "#ff5e13" = "#7cff13", "#912121" = "#769121" }
 
 # ── Windows roles (all 17). Layers = inkscape:label in the master; hotspots from upstream *.conf
-#    (design space 32). Mapping evidence (IoU vs upstream PNGs): docs/LAYER_SPLITTING_DESIGN.md section 1.
+#    (design space 32). Mapping evidence (IoU vs upstream PNGs): w11-cursor-toolkit docs/LAYER_SPLITTING_DESIGN.md section 1.
 [cursors.arrow]        # Normal Select        upstream Arrow.conf
 layers  = ["Arrow"]
 hotspot = [0, 0]

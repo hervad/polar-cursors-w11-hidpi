@@ -20,7 +20,7 @@
 **UNBLOCKED.** Can become public once the repo is complete (creating/publishing the repo needs the maintainer's explicit OK).
 Builds locally and from a clean clone (2026-10-07): `w11cursor unpack theme.toml` -> build -> validate. Open:
 install test on real Windows, preview image, existing-ports comparison. Drop shadow: decided - none in the
-artwork, Windows draws its own (workspace ADR-14; README tells users about the toggle).
+artwork, Windows draws its own (toolkit docs/DECISIONS.md ADR-14; README tells users about the toggle).
 
 ## Archive layout
 | Folder | Contents |
