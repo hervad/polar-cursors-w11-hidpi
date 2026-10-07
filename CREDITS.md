@@ -20,6 +20,6 @@ The build verifies that hash and reads only `PolarCursorTheme/Source/Cursors.svg
   60 ms per frame approximated as alternating 4/3 jiffies (1,083 ms per turn instead of 1,080 ms).
 - Blue/Green: spinner bar hue rotated +180° / +74° (measured from upstream's PNGs; upstream's recolour script
   is an incomplete draft).
-- The soft drop shadow in upstream's PNGs is not part of the SVG master and is not reproduced (yet).
+- Drop shadow not reproduced in the artwork (Windows draws its own; upstream's PNGs had one baked in, the SVG master does not).
 - Hotspots from upstream's `*.conf`, rescaled per size; Windows role mapping incl. Pin and Person
   (both use the Link hand for now). No files in overrides/.

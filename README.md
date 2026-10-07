@@ -33,6 +33,8 @@ TODO: `w11cursor inspect` evidence for each existing port (layers, hotspots, rol
   (hue within 0.1°).
 - **Location Select (Pin) and Person Select** have no Polar artwork; they use the pointing hand (Link Select)
   for now, like Windows' own Pin/Person cursors, which are hand variants. Dedicated badges may come later.
+- **Shadow:** upstream's soft drop shadow isn't baked into the artwork, because Windows draws its own. For the
+  closest look, turn on Settings > Accessibility > Mouse pointer and touch > **Enable mouse pointer shadow**.
 - **Animation:** 18 frames per turn like upstream (60 ms each); Windows counts in 1/60 s, so frames alternate
   4/3 jiffies: 1,083 ms per turn instead of 1,080 ms.
 
