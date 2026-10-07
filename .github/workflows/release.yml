@@ -13,7 +13,7 @@ jobs:
     with:
       toolkit-ref: v0.1.0
       # Upstream is a vendored tarball: verify its SHA-256 and extract the SVG master (same command as locally).
-      # The pinned toolkit tag must include `w11cursor unpack` (added after v0.1.0 - bump when tagging).
+      # Needs a toolkit tag that includes `w11cursor unpack` (v0.1.0 and later).
       pre-build: w11cursor unpack theme.toml
     permissions:
       contents: write
