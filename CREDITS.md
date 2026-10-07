@@ -6,6 +6,9 @@ The author's licence notice is in [COPYRIGHT](COPYRIGHT), copied byte-for-byte f
 where it shipped as `COPYRIGHT~` (identical in all three variant folders; there is no file named
 `COPYRIGHT` without the tilde upstream). The full GPL-2.0 text is in [LICENSE](LICENSE)
 (from https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt).
+**Source provenance:** `upstream/27913-PolarCursorThemes.tar.bz2` is the original archive from the gnome-look page
+above, committed unmodified (417,876 bytes, SHA-256 `03d77c528c89f507eb240d4efd2dfcb0b5d8245cd20c94f9cf8a87e50c16f598`).
+The build verifies that hash and reads only `PolarCursorTheme/Source/Cursors.svg` from it (`w11cursor unpack theme.toml`).
 **Windows 11 HiDPI port:** Vadym Herman ([@hervad](https://github.com/hervad)), built with
 [w11-cursor-toolkit](https://github.com/hervad/w11-cursor-toolkit)
 

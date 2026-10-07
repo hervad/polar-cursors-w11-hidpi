@@ -12,6 +12,8 @@ jobs:
     uses: hervad/w11-cursor-toolkit/.github/workflows/build-theme.yml@v0.1.0
     with:
       toolkit-ref: v0.1.0
-      # pre-build: "make -C upstream svg"   # only if upstream must generate its SVGs first (Comix)
+      # Upstream is a vendored tarball: verify its SHA-256 and extract the SVG master (same command as locally).
+      # The pinned toolkit tag must include `w11cursor unpack` (added after v0.1.0 - bump when tagging).
+      pre-build: w11cursor unpack theme.toml
     permissions:
       contents: write

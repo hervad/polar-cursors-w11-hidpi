@@ -15,8 +15,12 @@ description = "Polar Cursor Theme 1.4 (orange/blue/green busy)"
 [upstream]                              # provenance - copied into README/CREDITS, also documents the pin
 kind    = "tarball"                         # git | tarball
 url     = "https://www.gnome-look.org/p/999968 (27913-PolarCursorThemes.tar.bz2, downloaded 2026-10-07)"
-ref     = "sha256:03d77c528c89f507eb240d4efd2dfcb0b5d8245cd20c94f9cf8a87e50c16f598"   # tarball pin (vendored unchanged)
-path    = "upstream"                    # git submodule (or unpacked tarball) location
+# The ORIGINAL tarball is committed unchanged (GPL corresponding source). Before building, locally and in CI:
+#   w11cursor unpack theme.toml   -> checks sha256, extracts only `extract` into `into` (git-ignored)
+archive = "upstream/27913-PolarCursorThemes.tar.bz2"
+sha256  = "03d77c528c89f507eb240d4efd2dfcb0b5d8245cd20c94f9cf8a87e50c16f598"
+extract = ["PolarCursorTheme/Source/Cursors.svg"]
+into    = "build/upstream"
 authors = ["Eric Matthews (ECHM)"]
 license = "GPL-2.0-or-later (author notice COPYRIGHT~, identical in all 3 variants)"
 page    = "https://www.gnome-look.org/p/999968"
@@ -34,9 +38,9 @@ hotspot_mode  = "point"  # "point": geometric SVG point (arrow tips). "center": 
 # ani_chunk_order  = ["anih", "LIST", "rate"]
 # png_min_size     = 1   # 256 = BMP below 256 px (fallback if a PNG layer is ever rejected)
 
-# ONE Inkscape master; each cursor names its layers (ADR-13). Unpacked unchanged from the pinned tarball.
+# ONE Inkscape master; each cursor names its layers (ADR-13). Extracted unchanged by `w11cursor unpack`.
 [source]
-master = "upstream/PolarCursorTheme/Source/Cursors.svg"
+master = "build/upstream/PolarCursorTheme/Source/Cursors.svg"
 
 # Only variants on the gnome-look page: orange (default), blue, green. They differ ONLY in the spinner
 # bar colour; Blue/Green rotate the bar's hue (+180 / +74 deg) measured from the upstream PNGs

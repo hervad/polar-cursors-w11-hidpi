@@ -3,3 +3,5 @@
 # Licence texts must stay byte-identical to their sources: never convert them.
 LICENSE -text
 COPYRIGHT -text
+# The vendored upstream archive must stay byte-identical (its SHA-256 is pinned).
+*.tar.bz2 binary

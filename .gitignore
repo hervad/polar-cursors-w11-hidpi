@@ -2,5 +2,5 @@ dist/
 .venv/
 __pycache__/
 *.zip
-# Upstream tarball contents: not committed until vendoring is approved (PORT_STATUS.md).
-upstream/
+# Files extracted from upstream/*.tar.bz2 by `w11cursor unpack` (never committed; the tarball is)
+build/

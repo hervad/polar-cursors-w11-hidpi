@@ -1,14 +1,14 @@
 # Port status: Polar Cursor Theme
 
 - gnome-look page: https://www.gnome-look.org/p/999968
-- upstream: tarball, downloaded manually by the maintainer 2026-10-07, kept OUTSIDE git until repo creation is approved:
-  `27913-PolarCursorThemes.tar.bz2` (in a local folder outside the repo)
+- upstream: original tarball, downloaded manually by the maintainer 2026-10-07, **vendored unchanged** (approved 2026-10-07) as
+  `upstream/27913-PolarCursorThemes.tar.bz2` (`.gitattributes`: binary). `w11cursor unpack theme.toml` checks the SHA-256 and
+  extracts only `PolarCursorTheme/Source/Cursors.svg` into git-ignored `build/upstream/` - locally and as the CI pre-build.
   - size: 417,876 bytes (bzip2 tar; downloaded under the name `27913-PolarCursorThemes.tar.tar`)
   - SHA-256: `03d77c528c89f507eb240d4efd2dfcb0b5d8245cd20c94f9cf8a87e50c16f598`
   - 745 entries (670 files, 75 symlinks); file dates 2005-10-08 … 2006-05-08; owner `eric/eric`
   - verified 2026-10-07: hash recomputed after the move, `bzip2 -t` OK
   - "v1.4" comes from the store page / file name only; nothing inside the archive states a version.
-  - Plan: vendor the tarball **unchanged** as the upstream source (`upstream/` + this SHA-256 as the pin).
 - upstream license: **GPL-2.0-or-later**. Author notice "Polar Cursor Theme / Copyright (C) 2005 Eric Matthews",
   shipped as `COPYRIGHT~` (786 B, SHA-256 `5896ac839b98bc20c01cc4ffc7abd21cd90a4c650781a089fa2f76ea7072a131`),
   byte-identical in all 3 variant folders. The maintainer counts it as licence confirmation (2026-10-07).
@@ -18,8 +18,7 @@
 
 ## Status
 **UNBLOCKED.** Can become public once the repo is complete (creating/publishing the repo needs the maintainer's explicit OK).
-Builds locally (2026-10-07). `upstream/` holds only `PolarCursorTheme/Source/Cursors.svg`, unpacked unchanged from
-the hash-checked tarball, and is git-ignored until vendoring is approved. Open: drop shadow (pending the maintainer's
+Builds locally and from a clean clone (2026-10-07): `w11cursor unpack theme.toml` -> build -> validate. Open: drop shadow (pending the maintainer's
 Windows pointer-shadow test), install test on real Windows, preview image, existing-ports comparison.
 
 ## Archive layout
@@ -105,7 +104,7 @@ The design canvas equals the PNG size (32), so these hotspots are already in SVG
 exported 1:1 from the 32×32 canvas (to verify when mapping layers).
 
 ## Checklist
-- [x] Upstream archive located, hashed, inventoried (tarball + sha256 recorded; vendoring waits for repo approval)
+- [x] Upstream tarball vendored unchanged + sha256 pinned; `w11cursor unpack` (local + CI pre-build); clean-clone build verified
 - [x] License verified by reading the actual notice -> ./LICENSE (GPL-2.0 text) + ./COPYRIGHT (author notice)
 - [x] design_canvas confirmed from SVG and all .conf files (32), set in theme.toml
 - [x] Layer splitting + spinner bar rotation + recolor map for Blue/Green (toolkit ADR-13; theme.toml wired)
