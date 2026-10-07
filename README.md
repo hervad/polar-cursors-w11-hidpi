@@ -18,7 +18,7 @@ Sharp at every display scale and pointer size. Built from the original vector ar
 | | Layers (px) |
 |---|---|
 | Static (`.cur`) | 32 48 64 72 80 96 112 120 128 144 160 168 176 192 200 208 216 224 240 256 |
-| Animated (`.ani`) | 32 48 64 72 80 96 120 128 |
+| Animated (`.ani`) | 32 48 64 72 80 96 120 128 144 |
 
 Covers pointer sizes 1–15 at 100 % and the common 125–300 % scales without resampling.
 Details: [w11-cursor-toolkit docs](https://github.com/hervad/w11-cursor-toolkit).
