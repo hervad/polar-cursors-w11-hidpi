@@ -1,0 +1,124 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# theme.toml - the ONLY build input of a theme repo. Read by `w11cursor`.
+# Fill every TODO, then:  w11cursor build theme.toml && w11cursor validate theme.toml
+# ─────────────────────────────────────────────────────────────────────────────
+schema = 1
+
+[theme]
+slug        = "polar"               # used in zip names: <slug>-<variant>-w11-hidpi-v<version>.zip
+name        = "Polar Cursor Theme"
+version     = "0.1.0"                   # YOUR port version (tag v0.1.0 to release)
+license     = "GPL-2.0-or-later"     # author notice COPYRIGHT (shipped upstream as COPYRIGHT~), full text in LICENSE
+porter      = "Vadym Herman (hervad)"
+description = "Polar Cursor Theme 1.4 (orange/blue/green busy)"
+
+[upstream]                              # provenance - copied into README/CREDITS, also documents the pin
+kind    = "tarball"                         # git | tarball
+url     = "https://www.gnome-look.org/p/999968 (27913-PolarCursorThemes.tar.bz2, downloaded 2026-10-07)"
+ref     = "sha256:03d77c528c89f507eb240d4efd2dfcb0b5d8245cd20c94f9cf8a87e50c16f598"   # tarball pin (vendored unchanged)
+path    = "upstream"                    # git submodule (or unpacked tarball) location
+authors = ["Eric Matthews (ECHM)"]
+license = "GPL-2.0-or-later (author notice COPYRIGHT~, identical in all 3 variants)"
+page    = "https://www.gnome-look.org/p/999968"
+
+[render]
+renderer      = "cairosvg"
+design_canvas = 32       # measured: Cursors.svg is 32x32 and every upstream .conf uses size 32;
+                         # hotspots below are in THIS space.
+hotspot_mode  = "point"  # "point": geometric SVG point (arrow tips). "center": middle of a design pixel.
+
+[sizes]                  # omit the whole table to use toolkit defaults (recommended until the probe says otherwise)
+# static           = [32, 40, 48, 56, 64, 72, 80, 96, 112, 128, 144, 160, 192, 224, 256]
+# animated         = [32, 40, 48, 64, 80, 96, 128]
+# ani_budget_bytes = 1000000
+# ani_chunk_order  = ["anih", "LIST", "rate"]
+# png_min_size     = 1   # 256 = BMP below 256 px (fallback if a PNG layer is ever rejected)
+
+# One [[variants]] block per scheme you ship. Only variants on the gnome-look page!
+[[variants]]
+id          = "orange"
+scheme_name = "Polar W11 HiDPI"
+svg_dir     = "src/svg"
+
+[[variants]]
+id          = "blue"
+scheme_name = "Polar Blue W11 HiDPI"
+svg_dir     = "src/svg"
+
+[[variants]]
+id          = "green"
+scheme_name = "Polar Green W11 HiDPI"
+svg_dir     = "src/svg"
+
+# ── Windows roles (all 17 required). svg = file in svg_dir (overrides/<variant>/ wins),
+#    frames = animated, same_as = reuse another role's art. Hints = usual Xcursor names.
+[cursors.arrow]        # Normal Select       hints: left_ptr, default
+svg = "TODO.svg"
+hotspot = [0, 0]
+
+[cursors.help]         # Help Select         hints: help, question_arrow, left_ptr_help
+svg = "TODO.svg"
+hotspot = [0, 0]
+
+[cursors.working]      # Working in Background (animated) hints: left_ptr_watch, progress
+frames = "TODO-{n:02d}.svg"
+frame_count = 1
+frame_start = 1
+delay = 2              # jiffies (1/60 s); copy from upstream .in/.cursor config
+hotspot = [0, 0]
+
+[cursors.busy]         # Busy (animated)     hints: wait, watch
+frames = "TODO-{n:02d}.svg"
+frame_count = 1
+delay = 2
+hotspot = [0, 0]
+
+[cursors.precision]    # Precision Select    hints: crosshair, cross
+svg = "TODO.svg"
+hotspot = [0, 0]
+
+[cursors.text]         # Text Select         hints: xterm, text
+svg = "TODO.svg"
+hotspot = [0, 0]
+
+[cursors.handwriting]  # Handwriting         hints: pencil
+svg = "TODO.svg"
+hotspot = [0, 0]
+
+[cursors.unavailable]  # Unavailable         hints: not-allowed, circle, crossed_circle
+svg = "TODO.svg"
+hotspot = [0, 0]
+
+[cursors.vert]         # Vertical Resize     hints: size_ver, sb_v_double_arrow
+svg = "TODO.svg"
+hotspot = [0, 0]
+
+[cursors.horz]         # Horizontal Resize   hints: size_hor, sb_h_double_arrow
+svg = "TODO.svg"
+hotspot = [0, 0]
+
+[cursors.dgn1]         # Diagonal Resize 1 = NW-SE (↖↘)  hints: size_fdiag, bd_double_arrow - VERIFY VISUALLY
+svg = "TODO.svg"
+hotspot = [0, 0]
+
+[cursors.dgn2]         # Diagonal Resize 2 = NE-SW (↗↙)  hints: size_bdiag, fd_double_arrow - VERIFY VISUALLY
+svg = "TODO.svg"
+hotspot = [0, 0]
+
+[cursors.move]         # Move                hints: fleur, size_all
+svg = "TODO.svg"
+hotspot = [0, 0]
+
+[cursors.alternate]    # Alternate Select    hints: up-arrow, center_ptr
+svg = "TODO.svg"
+hotspot = [0, 0]
+
+[cursors.link]         # Link Select         hints: pointer, hand2
+svg = "TODO.svg"
+hotspot = [0, 0]
+
+[cursors.pin]          # Location Select (Win10 1903+). Upstream rarely has one: reuse or draw in overrides/_all/pin.svg
+same_as = "link"
+
+[cursors.person]       # Person Select (Win10 1903+). Same story.
+same_as = "link"
