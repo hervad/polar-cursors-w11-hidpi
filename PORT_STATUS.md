@@ -19,8 +19,8 @@
 ## Status
 **UNBLOCKED.** Can become public once the repo is complete (creating/publishing the repo needs the maintainer's explicit OK).
 Builds locally and from a clean clone (2026-10-07): `w11cursor unpack theme.toml` -> build -> validate.
-Installed on Windows 11 25H2 (2026-10-08). Open: the maintainer's on-screen blur check; existing-ports comparison
-(optional, not in the README). Drop shadow: decided - none in the
+Installed on Windows 11 25H2 (2026-10-08); on-screen check by the maintainer OK. **Released v0.1.0** (2026-10-08).
+Open: existing-ports comparison (optional, not in the README). Drop shadow: decided - none in the
 artwork, Windows draws its own (toolkit docs/DECISIONS.md ADR-14; README tells users about the toggle).
 
 ## Archive layout
@@ -117,6 +117,7 @@ exported 1:1 from the 32×32 canvas (to verify when mapping layers).
 - [x] Installed on Windows 11 25H2 build 26200 (2026-10-08): all 3 variants via install.inf; Test-LoadCursors 51/51 on
       C:\Windows\Cursors; live system cursor matches pointer.cur/busy.ani/link.cur (size, hotspot, pixels);
       load time and handle-leak check vs Microsoft aero (README table)
-- [ ] On-screen blur check by the maintainer: pointer sizes 1-6 at 100/125/150/175 %
+- [x] On-screen check by the maintainer (2026-10-08): looks OK
 - [x] README (Capitaine layout), CREDITS, preview image (`w11cursor preview`, from the built files)
-- [ ] tag v0.1.0 (needs the toolkit repo published and tagged v0.1.0 first)
+- [x] v0.1.0 released by CI (2026-10-08; toolkit v0.1.0): 3 zips + SHA256SUMS; downloaded zips match the sums and
+      load 17/17 on Windows 11
