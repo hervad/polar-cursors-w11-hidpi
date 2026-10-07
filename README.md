@@ -1,6 +1,6 @@
 # Polar Cursor Theme — Windows 11 HiDPI cursors
 
-Sharp at every display scale and pointer size. Built from the original vector art by
+Rendered from the original vector art for every layer Windows picks at pointer sizes 1–15. Artwork by
 **Eric Matthews (ECHM)** ([Polar Cursor Theme on gnome-look](https://www.gnome-look.org/p/999968)), packaged for Windows 10 1903+ / Windows 11.
 
 ![preview](docs/preview.png)
@@ -20,7 +20,7 @@ Sharp at every display scale and pointer size. Built from the original vector ar
 | Static (`.cur`) | 32 48 64 72 80 96 112 120 128 144 160 168 176 192 200 208 216 224 240 256 |
 | Animated (`.ani`) | 32 48 64 72 80 96 120 128 144 |
 
-Covers pointer sizes 1–15 at 100 % and the common 125–300 % scales without resampling.
+Contains every layer size Windows picks at 100–199 % display scale (measured), plus the sizes assumed for 200–300 %.
 Details: [w11-cursor-toolkit docs](https://github.com/hervad/w11-cursor-toolkit).
 
 ## Why not the existing ports?
