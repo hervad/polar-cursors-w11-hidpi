@@ -2,3 +2,5 @@ dist/
 .venv/
 __pycache__/
 *.zip
+# Upstream tarball contents: not committed until vendoring is approved (PORT_STATUS.md).
+upstream/

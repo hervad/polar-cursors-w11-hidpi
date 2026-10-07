@@ -18,7 +18,9 @@
 
 ## Status
 **UNBLOCKED.** Can become public once the repo is complete (creating/publishing the repo needs the maintainer's explicit OK).
-Not built yet.
+Builds locally (2026-10-07). `upstream/` holds only `PolarCursorTheme/Source/Cursors.svg`, unpacked unchanged from
+the hash-checked tarball, and is git-ignored until vendoring is approved. Open: drop shadow (pending the maintainer's
+Windows pointer-shadow test), install test on real Windows, preview image, existing-ports comparison.
 
 ## Archive layout
 | Folder | Contents |
@@ -106,10 +108,10 @@ exported 1:1 from the 32×32 canvas (to verify when mapping layers).
 - [x] Upstream archive located, hashed, inventoried (tarball + sha256 recorded; vendoring waits for repo approval)
 - [x] License verified by reading the actual notice -> ./LICENSE (GPL-2.0 text) + ./COPYRIGHT (author notice)
 - [x] design_canvas confirmed from SVG and all .conf files (32), set in theme.toml
-- [ ] Layer splitting (toolkit feature, item 5) + spinner bar rotation + recolor map for Blue/Green
-- [ ] All 17 roles mapped; diagonals checked visually; Pin/Person decided
+- [x] Layer splitting + spinner bar rotation + recolor map for Blue/Green (toolkit ADR-13; theme.toml wired)
+- [x] All 17 roles mapped; diagonals checked visually (preview vs upstream PNGs); Pin/Person = same_as link
 - [x] Hotspots copied from upstream config (*.conf) — AngleSW quirk noted
-- [ ] `w11cursor build` + `validate` green locally
+- [x] `w11cursor build` + `validate` green locally (3 variants); Test-LoadCursors 51/51; Get-AniFrameTiming 6/6
 - [ ] Existing Windows ports inspected with `w11cursor inspect` -> README table
 - [ ] Installed on real Windows 11, slider 1-15 + 100/150/200 % checked
 - [ ] README/CREDITS filled (CREDITS done), preview image, tag v0.1.0

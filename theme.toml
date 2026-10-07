@@ -34,91 +34,100 @@ hotspot_mode  = "point"  # "point": geometric SVG point (arrow tips). "center": 
 # ani_chunk_order  = ["anih", "LIST", "rate"]
 # png_min_size     = 1   # 256 = BMP below 256 px (fallback if a PNG layer is ever rejected)
 
-# One [[variants]] block per scheme you ship. Only variants on the gnome-look page!
+# ONE Inkscape master; each cursor names its layers (ADR-13). Unpacked unchanged from the pinned tarball.
+[source]
+master = "upstream/PolarCursorTheme/Source/Cursors.svg"
+
+# Only variants on the gnome-look page: orange (default), blue, green. They differ ONLY in the spinner
+# bar colour; Blue/Green rotate the bar's hue (+180 / +74 deg) measured from the upstream PNGs
+# (docs/LAYER_SPLITTING_DESIGN.md section 6). Both hex values occur exactly once in the master.
 [[variants]]
 id          = "orange"
 scheme_name = "Polar W11 HiDPI"
-svg_dir     = "src/svg"
 
 [[variants]]
 id          = "blue"
 scheme_name = "Polar Blue W11 HiDPI"
-svg_dir     = "src/svg"
+recolor     = { "#ff5e13" = "#13b3ff", "#912121" = "#219191" }
 
 [[variants]]
 id          = "green"
 scheme_name = "Polar Green W11 HiDPI"
-svg_dir     = "src/svg"
+recolor     = { "#ff5e13" = "#7cff13", "#912121" = "#769121" }
 
-# ── Windows roles (all 17 required). svg = file in svg_dir (overrides/<variant>/ wins),
-#    frames = animated, same_as = reuse another role's art. Hints = usual Xcursor names.
-[cursors.arrow]        # Normal Select       hints: left_ptr, default
-svg = "TODO.svg"
+# ── Windows roles (all 17). Layers = inkscape:label in the master; hotspots from upstream *.conf
+#    (design space 32). Mapping evidence (IoU vs upstream PNGs): docs/LAYER_SPLITTING_DESIGN.md section 1.
+[cursors.arrow]        # Normal Select        upstream Arrow.conf
+layers  = ["Arrow"]
 hotspot = [0, 0]
 
-[cursors.help]         # Help Select         hints: help, question_arrow, left_ptr_help
-svg = "TODO.svg"
+[cursors.help]         # Help Select          upstream Help.conf (Arrow + "?" badge)
+layers  = ["Arrow", "Info"]
 hotspot = [0, 0]
 
-[cursors.working]      # Working in Background (animated) hints: left_ptr_watch, progress
-frames = "TODO-{n:02d}.svg"
-frame_count = 1
-frame_start = 1
-delay = 2              # jiffies (1/60 s); copy from upstream .in/.cursor config
-hotspot = [0, 0]
+[cursors.working]      # Working in Background  upstream AppStarting.conf: 18 frames x 60 ms
+layers      = ["Arrow", "AppSpinner"]
+rotate      = { id = "g13479", center = [16.422, 16.421], step_deg = 10 }   # bar only, clockwise
+frame_count = 18
+delay       = [4, 3, 4, 3, 4, 4, 3, 4, 3, 4, 4, 3, 4, 3, 4, 4, 3, 4]       # 65 jiffies = 1,083 ms (orig 1,080)
+hotspot     = [0, 0]
 
-[cursors.busy]         # Busy (animated)     hints: wait, watch
-frames = "TODO-{n:02d}.svg"
-frame_count = 1
-delay = 2
-hotspot = [0, 0]
+[cursors.busy]         # Busy                 upstream Wait.conf: 18 frames x 60 ms
+layers      = ["Spinner"]
+rotate      = { id = "g12727", center = [16.422, 16.421], step_deg = 10 }
+frame_count = 18
+delay       = [4, 3, 4, 3, 4, 4, 3, 4, 3, 4, 4, 3, 4, 3, 4, 4, 3, 4]
+hotspot     = [10, 10]
 
-[cursors.precision]    # Precision Select    hints: crosshair, cross
-svg = "TODO.svg"
-hotspot = [0, 0]
+[cursors.precision]    # Precision Select     upstream Crosshair.conf
+layers  = ["Crosshair"]
+hotspot = [11, 11]
 
-[cursors.text]         # Text Select         hints: xterm, text
-svg = "TODO.svg"
-hotspot = [0, 0]
+[cursors.text]         # Text Select          upstream IBeam.conf (layer "Caret")
+layers  = ["Caret"]
+hotspot = [5, 9]
 
-[cursors.handwriting]  # Handwriting         hints: pencil
-svg = "TODO.svg"
-hotspot = [0, 0]
+[cursors.handwriting]  # Handwriting          upstream Handwriting.conf
+layers  = ["Pencil"]
+hotspot = [0, 20]
 
-[cursors.unavailable]  # Unavailable         hints: not-allowed, circle, crossed_circle
-svg = "TODO.svg"
-hotspot = [0, 0]
+[cursors.unavailable]  # Unavailable          upstream NO.conf
+layers  = ["Circle"]
+hotspot = [11, 11]
 
-[cursors.vert]         # Vertical Resize     hints: size_ver, sb_v_double_arrow
-svg = "TODO.svg"
-hotspot = [0, 0]
+[cursors.vert]         # Vertical Resize      upstream SizeNS.conf
+layers  = ["NS"]
+hotspot = [5, 12]
 
-[cursors.horz]         # Horizontal Resize   hints: size_hor, sb_h_double_arrow
-svg = "TODO.svg"
-hotspot = [0, 0]
+[cursors.horz]         # Horizontal Resize    upstream SizeWE = NS transposed (x<->y), IoU 1.00
+layers    = ["NS"]
+transform = "matrix(0 1 1 0 0 0)"
+hotspot   = [12, 5]
 
-[cursors.dgn1]         # Diagonal Resize 1 = NW-SE (↖↘)  hints: size_fdiag, bd_double_arrow - VERIFY VISUALLY
-svg = "TODO.svg"
-hotspot = [0, 0]
+[cursors.dgn1]         # Diagonal Resize 1 = NW-SE: NS rotated -45 deg about its centre (5.65, 12.65),
+layers    = ["NS"]     # centre placed exactly on the hotspot (9, 9)
+transform = "translate(9 9) rotate(-45) translate(-5.65 -12.65)"
+hotspot   = [9, 9]
 
-[cursors.dgn2]         # Diagonal Resize 2 = NE-SW (↗↙)  hints: size_bdiag, fd_double_arrow - VERIFY VISUALLY
-svg = "TODO.svg"
-hotspot = [0, 0]
+[cursors.dgn2]         # Diagonal Resize 2 = NE-SW: NS rotated +45 deg, same centre
+layers    = ["NS"]
+transform = "translate(9 9) rotate(45) translate(-5.65 -12.65)"
+hotspot   = [9, 9]
 
-[cursors.move]         # Move                hints: fleur, size_all
-svg = "TODO.svg"
-hotspot = [0, 0]
+[cursors.move]         # Move                 upstream SizeAll.conf (layer "Fleur")
+layers  = ["Fleur"]
+hotspot = [12, 12]
 
-[cursors.alternate]    # Alternate Select    hints: up-arrow, center_ptr
-svg = "TODO.svg"
-hotspot = [0, 0]
+[cursors.alternate]    # Alternate Select     upstream UpArrow.conf
+layers  = ["ArrowUP"]
+hotspot = [6, 0]
 
-[cursors.link]         # Link Select         hints: pointer, hand2
-svg = "TODO.svg"
-hotspot = [0, 0]
+[cursors.link]         # Link Select          upstream Hand.conf (HandPointer.png)
+layers  = ["Hand Pointer"]
+hotspot = [5, 0]
 
-[cursors.pin]          # Location Select (Win10 1903+). Upstream rarely has one: reuse or draw in overrides/_all/pin.svg
-same_as = "link"
+[cursors.pin]          # Location Select: upstream has none; Windows' own Pin/Person are hand variants.
+same_as = "link"       # v1 stand-in (README). Badges may come later as overrides/_all/pin.svg.
 
-[cursors.person]       # Person Select (Win10 1903+). Same story.
+[cursors.person]       # Person Select: same story.
 same_as = "link"

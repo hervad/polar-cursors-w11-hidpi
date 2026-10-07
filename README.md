@@ -1,14 +1,14 @@
 # Polar Cursor Theme — Windows 11 HiDPI cursors
 
 Sharp at every display scale and pointer size. Built from the original vector art by
-**TODO author** ([upstream](TODO)), packaged for Windows 10 1903+ / Windows 11.
+**Eric Matthews (ECHM)** ([Polar Cursor Theme on gnome-look](https://www.gnome-look.org/p/999968)), packaged for Windows 10 1903+ / Windows 11.
 
 ![preview](docs/preview.png)
 
 ## Install
 1. Download the zip for your variant from [Releases](../../releases/latest) and extract it.
 2. Right-click **`install.inf`** → **Install** (accept the UAC prompt — it copies to `C:\Windows\Cursors`).
-3. Mouse Properties opens → choose **TODO scheme name** → **Apply**.
+3. Mouse Properties opens → choose **Polar W11 HiDPI**, **Polar Blue W11 HiDPI** or **Polar Green W11 HiDPI** → **Apply**.
 
 > Changing the pointer size in Settings can switch the scheme back to *Windows Default* — just re-select it.
 
@@ -26,5 +26,15 @@ Details: [w11-cursor-toolkit docs](https://github.com/hervad/w11-cursor-toolkit)
 ## Why not the existing ports?
 TODO: `w11cursor inspect` evidence for each existing port (layers, hotspots, roles).
 
+## Notes
+- **Variants:** orange, blue and green differ only in the colour of the busy/working spinner bar. Blue and Green
+  recolour the bar by rotating the original orange's hue (+180° / +74°), measured from the upstream PNGs.
+  Upstream's own recolouring script is an incomplete draft, so these colours approximate the originals
+  (hue within 0.1°).
+- **Location Select (Pin) and Person Select** have no Polar artwork; they use the pointing hand (Link Select)
+  for now, like Windows' own Pin/Person cursors, which are hand variants. Dedicated badges may come later.
+- **Animation:** 18 frames per turn like upstream (60 ms each); Windows counts in 1/60 s, so frames alternate
+  4/3 jiffies: 1,083 ms per turn instead of 1,080 ms.
+
 ## License
-Artwork: TODO license (same as upstream). See [CREDITS.md](CREDITS.md) and [LICENSE](LICENSE).
+Artwork: GPL-2.0-or-later (same as upstream; author's notice in [COPYRIGHT](COPYRIGHT)). See [CREDITS.md](CREDITS.md) and [LICENSE](LICENSE).

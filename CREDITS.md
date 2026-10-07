@@ -10,6 +10,13 @@ where it shipped as `COPYRIGHT~` (identical in all three variant folders; there 
 [w11-cursor-toolkit](https://github.com/hervad/w11-cursor-toolkit)
 
 ## Changes from upstream
-- Re-rendered from the original SVG sources at every Windows cursor size (no resampling)
-- Hotspots rescaled per size; Windows role mapping incl. Pin and Person
-- TODO: list any files in overrides/ and what was changed
+- Re-rendered from the original SVG master (`Source/Cursors.svg`) at every Windows cursor size (no resampling).
+  Cursors are cut from its Inkscape layers; Help = Arrow + Info, Working = Arrow + AppSpinner (as upstream's PNGs).
+- Horizontal and diagonal resize cursors: the NS arrow transposed / rotated by ±45°, as in upstream's PNGs.
+- Busy/Working: 18 frames made by rotating the spinner bar 10° per frame (upstream shipped pre-rendered PNGs);
+  60 ms per frame approximated as alternating 4/3 jiffies (1,083 ms per turn instead of 1,080 ms).
+- Blue/Green: spinner bar hue rotated +180° / +74° (measured from upstream's PNGs; upstream's recolour script
+  is an incomplete draft).
+- The soft drop shadow in upstream's PNGs is not part of the SVG master and is not reproduced (yet).
+- Hotspots from upstream's `*.conf`, rescaled per size; Windows role mapping incl. Pin and Person
+  (both use the Link hand for now). No files in overrides/.
