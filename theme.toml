@@ -36,7 +36,7 @@ hotspot_mode  = "point"  # "point": geometric SVG point (arrow tips). "center": 
 # animated         = [32, 40, 48, 64, 80, 96, 128]
 # ani_budget_bytes = 1000000
 # ani_chunk_order  = ["anih", "LIST", "rate"]
-# png_min_size     = 1   # 256 = BMP below 256 px (fallback if a PNG layer is ever rejected)
+# layer_format     = "png"   # or "bmp" - one format for every layer; never mixed (ADR-4)
 
 # ONE Inkscape master; each cursor names its layers (ADR-13). Extracted unchanged by `w11cursor unpack`.
 [source]
