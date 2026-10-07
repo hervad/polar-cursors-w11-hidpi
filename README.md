@@ -90,7 +90,8 @@ failure blocks the release.
 ## Tips
 
 - **Shadow:** the original theme drew a soft shadow into each image. Windows draws its own, so it isn't baked in
-  here. For the closest look, run `main.cpl` and tick **Enable pointer shadow** on the **Pointers** tab.
+  here. For the closest look, turn on
+  **Settings › Accessibility › Mouse pointer and touch › Enable mouse pointer shadow**.
 - **Animation speed:** the original spins at 60 ms per frame. Windows counts animation time in 1/60 s steps, so the
   frames alternate between 67 ms and 50 ms: one turn takes 1,083 ms instead of 1,080 ms.
 
