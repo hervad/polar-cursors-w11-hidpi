@@ -18,8 +18,9 @@
 
 ## Status
 **UNBLOCKED.** Can become public once the repo is complete (creating/publishing the repo needs the maintainer's explicit OK).
-Builds locally and from a clean clone (2026-10-07): `w11cursor unpack theme.toml` -> build -> validate. Open:
-install test on real Windows, preview image, existing-ports comparison. Drop shadow: decided - none in the
+Builds locally and from a clean clone (2026-10-07): `w11cursor unpack theme.toml` -> build -> validate.
+Installed on Windows 11 25H2 (2026-10-08). Open: the maintainer's on-screen blur check; existing-ports comparison
+(optional, not in the README). Drop shadow: decided - none in the
 artwork, Windows draws its own (toolkit docs/DECISIONS.md ADR-14; README tells users about the toggle).
 
 ## Archive layout
@@ -112,6 +113,10 @@ exported 1:1 from the 32×32 canvas (to verify when mapping layers).
 - [x] All 17 roles mapped; diagonals checked visually (preview vs upstream PNGs); Pin/Person = same_as link
 - [x] Hotspots copied from upstream config (*.conf) — AngleSW quirk noted
 - [x] `w11cursor build` + `validate` green locally (3 variants); Test-LoadCursors 51/51; Get-AniFrameTiming 6/6
-- [ ] Existing Windows ports inspected with `w11cursor inspect` -> README table
-- [ ] Installed on real Windows 11, slider 1-15 + 100/150/200 % checked
-- [ ] README/CREDITS filled (CREDITS done), preview image, tag v0.1.0
+- [ ] (optional) Existing Windows ports inspected with `w11cursor inspect` - removed from the README until done
+- [x] Installed on Windows 11 25H2 build 26200 (2026-10-08): all 3 variants via install.inf; Test-LoadCursors 51/51 on
+      C:\Windows\Cursors; live system cursor matches pointer.cur/busy.ani/link.cur (size, hotspot, pixels);
+      load time and handle-leak check vs Microsoft aero (README table)
+- [ ] On-screen blur check by the maintainer: pointer sizes 1-6 at 100/125/150/175 %
+- [x] README (Capitaine layout), CREDITS, preview image (`w11cursor preview`, from the built files)
+- [ ] tag v0.1.0 (needs the toolkit repo published and tagged v0.1.0 first)
