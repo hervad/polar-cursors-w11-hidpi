@@ -29,7 +29,7 @@ If Windows ever shows a different scheme after you change the pointer size, pick
 | | Orange | Blue | Green |
 | --- | --- | --- | --- |
 | **Zip** | `polar-orange-w11-hidpi-v….zip` | `polar-blue-w11-hidpi-v….zip` | `polar-green-w11-hidpi-v….zip` |
-| **Scheme name** | Polar W11 HiDPI | Polar Blue W11 HiDPI | Polar Green W11 HiDPI |
+| **Scheme name** | Polar Orange W11 HiDPI | Polar Blue W11 HiDPI | Polar Green W11 HiDPI |
 
 The three variants are the ones on the original theme page. They differ only in the colour of the spinning bar in
 the busy and working cursors; every other cursor is the same white Polar artwork. Install all three and switch
@@ -97,12 +97,22 @@ failure blocks the release.
 
 ## Uninstall
 
+Upgrading from v0.1.0? Its scheme was called **Polar W11 HiDPI**; v0.1.1 installs it as **Polar Orange W11 HiDPI**. To remove the old
+one, pick another scheme in `main.cpl`, then run this in an administrator PowerShell:
+
+```powershell
+reg delete "HKCU\Control Panel\Cursors\Schemes" /v "Polar W11 HiDPI" /f
+Remove-Item "C:\Windows\Cursors\Polar W11 HiDPI" -Recurse
+```
+
+To uninstall a current scheme:
+
 1. Run `uninstall.cmd` from the extracted folder. It removes the scheme from the list and opens Mouse Properties.
 2. Pick another scheme and click **OK**.
 3. Delete the cursor files from an administrator PowerShell, for example:
 
 ```powershell
-Remove-Item "C:\Windows\Cursors\Polar W11 HiDPI" -Recurse
+Remove-Item "C:\Windows\Cursors\Polar Orange W11 HiDPI" -Recurse
 ```
 
 ## Build from source

@@ -105,6 +105,9 @@ Per relative path, SHA-256 compared across the 3 folders:
 The design canvas equals the PNG size (32), so these hotspots are already in SVG units *if* the PNGs were
 exported 1:1 from the 32×32 canvas (to verify when mapping layers).
 
+- **v0.1.1 rename** (maintainer, 2026-10-08): scheme "Polar W11 HiDPI" -> "Polar Orange W11 HiDPI" so every variant is named in
+  Mouse Properties. Same cursors (README previews regenerate byte-identical). README: upgrade note.
+
 ## Checklist
 - [x] Upstream tarball vendored unchanged + sha256 pinned; `w11cursor unpack` (local + CI pre-build); clean-clone build verified
 - [x] License verified by reading the actual notice -> ./LICENSE (GPL-2.0 text) + ./COPYRIGHT (author notice)

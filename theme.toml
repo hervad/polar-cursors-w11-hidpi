@@ -7,7 +7,7 @@ schema = 1
 [theme]
 slug        = "polar"               # used in zip names: <slug>-<variant>-w11-hidpi-v<version>.zip
 name        = "Polar Cursor Theme"
-version     = "0.1.0"                   # YOUR port version (tag v0.1.0 to release)
+version     = "0.1.1"                   # YOUR port version (tag v0.1.0 to release)
 license     = "GPL-2.0-or-later"     # author notice COPYRIGHT (shipped upstream as COPYRIGHT~), full text in LICENSE
 porter      = "Vadym Herman (hervad)"
 description = "Polar Cursor Theme 1.4 (orange/blue/green busy)"
@@ -47,7 +47,7 @@ master = "build/upstream/PolarCursorTheme/Source/Cursors.svg"
 # (w11-cursor-toolkit docs/LAYER_SPLITTING_DESIGN.md section 6). Both hex values occur exactly once in the master.
 [[variants]]
 id          = "orange"
-scheme_name = "Polar W11 HiDPI"
+scheme_name = "Polar Orange W11 HiDPI"   # v0.1.0: "Polar W11 HiDPI" (renamed so every variant is named)
 
 [[variants]]
 id          = "blue"
