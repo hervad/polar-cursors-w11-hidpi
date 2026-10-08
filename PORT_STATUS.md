@@ -124,3 +124,5 @@ exported 1:1 from the 32×32 canvas (to verify when mapping layers).
 - [x] README (Capitaine layout), CREDITS, preview image (`w11cursor preview`, from the built files)
 - [x] v0.1.0 released by CI (2026-10-08; toolkit v0.1.0): 3 zips + SHA256SUMS; downloaded zips match the sums and
       load 17/17 on Windows 11
+- [x] v0.1.1 released (2026-10-08): scheme rename; release zips match SHA256SUMS, INF scheme names correct, loader
+      17/17 per variant
