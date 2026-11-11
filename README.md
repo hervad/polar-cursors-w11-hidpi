@@ -122,7 +122,7 @@ theme archive in [`upstream/`](upstream/), which is committed unchanged and chec
 build. Rendering needs the native cairo library; see the toolkit's README for how to get it on Windows or Linux.
 
 ```powershell
-python -m pip install "w11cursor @ git+https://github.com/hervad/w11-cursor-toolkit@v0.1.0"
+python -m pip install "w11cursor @ git+https://github.com/hervad/w11-cursor-toolkit@v0.6.1"
 w11cursor unpack   theme.toml                 # verify the archive, extract the SVG master
 w11cursor build    theme.toml --out dist      # all three variants + zips
 w11cursor validate theme.toml --dist dist     # re-read every file: sizes, hotspots, frames, timing

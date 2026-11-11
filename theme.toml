@@ -135,3 +135,23 @@ same_as = "link"       # v1 stand-in (README). Badges may come later as override
 
 [cursors.person]       # Person Select: same story.
 same_as = "link"
+
+# ── Colour checks (toolkit v0.6.1 [[checks]], ADR-9 note). `validate` samples the BUILT layer at these design-unit
+#    points (solid areas in every variant, found on the built files) and fails the build if a measure is missed.
+# Polar is shaded: the points sit on gradients, so the sampled colours are the gradient there
+[[checks]]
+name = "pointer body vs outline"
+role = "arrow"
+a = [4.125, 7.125]
+b = [2.125, 1.875]
+size = 128
+min_contrast = 3
+
+# the bar is the only part the variants change (orange / blue / green)
+[[checks]]
+name = "Busy bar differs from its disc"
+role = "busy"
+a = [11.125, 14.875]
+b = [8.375, 16.125]
+size = 128
+min_delta_e = 15
