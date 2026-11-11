@@ -9,9 +9,10 @@ on:
 
 jobs:
   build:
-    uses: hervad/w11-cursor-toolkit/.github/workflows/build-theme.yml@v0.1.0
+    # v0.6.1+ also needed for [[checks]] (colour checks; only/exempt patterns, min_alpha).
+    uses: hervad/w11-cursor-toolkit/.github/workflows/build-theme.yml@v0.6.1
     with:
-      toolkit-ref: v0.1.0
+      toolkit-ref: v0.6.1
       # Upstream is a vendored tarball: verify its SHA-256 and extract the SVG master (same command as locally).
       # Needs a toolkit tag that includes `w11cursor unpack` (v0.1.0 and later).
       pre-build: w11cursor unpack theme.toml
